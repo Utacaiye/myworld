@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pemilihan Gambar Bumi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pilih Gambar Bumi Berdasarkan Kualitas</h1>
+  <select id="qualitySelect" onchange="updateEarthImage()">
+    <option value="e1.jpg">144p</option>
+    <option value="e2.jpg">480p</option>
+    <option value="e3.jpg" selected>720p</option>
+    <option value="e4.jpg">1080p</option>
+    <option value="e5.jpg">4K</option>
+  </select>
+
+  <div>
+    <img id="earthImage" src="earth-720.jpg" alt="Gambar Bumi">
+  </div>
+
+  <h2>Foto Orang Tersayang</h2>
+  <img src="foto-tersayang.jpg" alt="Foto Orang Tersayang">
+
+  <script>
+    function updateEarthImage() {
+      const selectedFile = document.getElementById('qualitySelect').value;
+      document.getElementById('earthImage').src = selectedFile;
+    }
+  </script>
+
+</body>
+</html>
