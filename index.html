@@ -20,6 +20,12 @@
       padding: 10px;
       font-size: 16px;
     }
+    #specialMessage {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff3399;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -29,21 +35,31 @@
     <option value="e1.jpg">144p</option>
     <option value="e2.jpg">480p</option>
     <option value="e3.jpg" selected>720p</option>
-    <option value="e4.jpg">1080p</option>
-    <option value="e5.jpg">4K</option>
+    <option value="e6.jpeg">Spesial Untukmu 💖</option>
   </select>
 
   <div>
-    <img id="earthImage" src="e3.jpg" alt="Gambar Bumi">
+    <img id="earthImage" src="e2.jpg" alt="Gambar Bumi">
   </div>
 
-  <h2>Foto Orang Tersayang</h2>
-  <img src="foto-tersayang.jpg" alt="Foto Orang Tersayang"> -->
+  <div id="specialMessage">Kamu adalah semestaku yang paling indah 🌍💫</div>
+
+<!--   <h2>Foto Orang Tersayang</h2>
+  <img src="./images/foto-tersayang.jpg" alt="Foto Orang Tersayang"> -->
 
   <script>
     function updateEarthImage() {
       const selectedFile = document.getElementById('qualitySelect').value;
-      document.getElementById('earthImage').src = selectedFile;
+      const earthImage = document.getElementById('earthImage');
+      const specialMessage = document.getElementById('specialMessage');
+
+      if (selectedFile === "special") {
+        earthImage.src = "./images/special.jpg";
+        specialMessage.style.display = "block";
+      } else {
+        earthImage.src = selectedFile;
+        specialMessage.style.display = "none";
+      }
     }
   </script>
 
